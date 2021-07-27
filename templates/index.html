@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Enter a New Wine</title>
+</head>
+<body>
+    <div class="container">
+        <img src="../static/logo.png" alt="Wine_Pour" class="logo">
+        {% if message %}
+        <p class="message">{{ message | safe }}</p>
+        {% endif %}
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <h3>Wine Name</h3>
+                <input
+                    type="text"
+                    name="wine"
+                    placeholder="Name of Wine"
+                />
+            </div>
+            <div class="form-group">
+                <h3>Wine Type</h3>
+                <select name="varietal">
+                    <option value="">Select Wine Type</option>
+                    <option value="Cabernet Sauvignon">Cabernet Cauvignon</option>
+                    <option value="Malbec">Malbec</option>
+                    <option value="Merlot">Merlot</option>
+                    <option value="Petite Sirah">Petite Sirah</option>
+                    <option value="Pinot Noir">Pinot Noir</option>
+                    <option value="Cabernet Franc">Cabernet Franc</option>
+                    <option value="Mencia">Mencia</option>
+                    <option value="Sangiovese">Sangiovese</option>
+                    <option value="Rhone">Rhone</option>
+                    <option value="Barbera">Barbera</option>
+                    <option value="Montepulciano">Montepulciano</option>
+                    <option value="Zinfandel">Zinfandel</option>
+                    <option value="Tempranillo">Tempranillo</option>
+                    <option value="Nebbiolo">Nebbiolo</option>
+                    <option value="Aglianico">Aglianico</option>
+                    <option value="Bordeaux">Bordeaux</option>
+                    <option value="Syrah">Syrah</option>
+                    <option value="Pinotage">Pinotage</option>
+                    <option value="Petit Verdot">Petit Verdot</option>
+                    <option value="Mourvedre">Mourvedre</option>
+                    <option value="Touriga Nacional">Touriga Nacional</option>
+                    <option value="Sagrantino">Sagrantino</option>
+                    <option value="Tannat">Tannat</option>
+                    <option value="Schiava">Schiava</option>
+                    <option value="Gamay">Gamay</option>
+                    <option value="Grenache">Grenache</option>
+                    <option value="Valpolicella">Valpolicella</option>
+                    <option value="Bobal">Bobal</option>
+                    <option value="Carmenere">Carmenere</option>
+                    <option value="Carignan">Carignan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h3>Origin</h3>
+                <textarea
+                    name="origin"
+                    id=""
+                    cols="30"
+                    rows="1"
+                    placeholder="Origin of the Wine"
+                ></textarea>
+            </div>
+            <div class="form-group">
+                <h3>Year Produced</h3>
+                <select name="year">
+                    <option value="">Year Produced</option>
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <option value="1993">1993</option>
+                    <option value="1994">1994</option>
+                    <option value="1995">1995</option>
+                    <option value="1996">1996</option>
+                    <option value="1997">1997</option>
+                    <option value="1998">1998</option>
+                    <option value="1999">1999</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <h3>Wine Rating</h3>
+                <input type="radio" name="rating" value="1" /> 1
+                <input type="radio" name="rating" value="2" /> 2
+                <input type="radio" name="rating" value="3" /> 3
+                <input type="radio" name="rating" value="4" /> 4
+                <input type="radio" name="rating" value="5" /> 5
+                <input type="radio" name="rating" value="6" /> 6
+                <input type="radio" name="rating" value="7" /> 7
+                <input type="radio" name="rating" value="8" /> 8
+                <input type="radio" name="rating" value="9" /> 9
+                <input type="radio" name="rating" value="10" checked /> 10
+            </div>
+            <div class="form-group">
+                <h3>Price</h3>
+                <input
+                    type="text"
+                    name="price"
+                    placeholder="Price per Bottle."
+                />
+            </div>
+            <div class="form-group">
+                <h3>Would You Buy Again?</h3>
+                <input type="radio" name="yesorno" value="Yes" /> Yes
+                <input type="radio" name="yesorno" value="No" /> No
+            </div>
+            <div class="form-group">
+                <h3>Notes About the Wine</h3>
+                <textarea
+                    name="comments"
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="Insert Your Most Pretentious Description Here."
+                ></textarea>
+            </div>
+            <input type="submit" value="Submit" class="btn" />
+        </form>
+    </div>
+</body>
+</html>
